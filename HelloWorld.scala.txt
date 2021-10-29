@@ -1,0 +1,56 @@
+class ElectricalBill{
+  var Consumer_no:Int=38562
+   var Consumer_name:String="Ram"
+   var connection:String=""
+   var current_month_reading:Double=600
+   var prev_month_reading:Double=300
+   var totalunits:Double=current_month_reading-prev_month_reading
+   var amount:Double=0
+   
+   if(connection=="Domestic")
+   {
+     if(totalunits>0 && totalunits>=100)
+       amount=totalunits*1;
+     if(totalunits>100 && totalunits<=200)
+       amount=totalunits*2.50
+     if(totalunits>200 && totalunits<=500)
+       amount=totalunits*4.00
+     else
+       amount=totalunits*6.00
+   }
+   
+   else if(connection=="Commercial")
+   {
+     if (totalunits>0 && totalunits>=100)
+       amount=totalunits*2;
+     if (totalunits>100 && totalunits<=200)
+       amount=totalunits*4.50
+     if (totalunits>200 && totalunits<=500)
+       amount=totalunits*6.00
+     else
+       amount=totalunits*7.00
+   
+   }
+ 
+ 
+ def Invoke(){
+ 
+ println("        Electrical bill          ")
+ println("Consumer number: "+Consumer_no)
+ println("Consumer name: "+Consumer_name)
+ println("Connection type: "+connection)
+ println("Current month reading: "+current_month_reading)
+ println("Previous month reading: "+prev_month_reading)
+ println("Total units: "+totalunits)
+ println("Bill: "+amount)
+ }
+}
+ 
+object HelloWorld {
+def main(args: Array[String]) { 
+   var a=new ElectricalBill()
+   a.Invoke()
+ 
+ 
+}
+}
