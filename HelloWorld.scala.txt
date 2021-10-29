@@ -1,3 +1,5 @@
+
+
 class ElectricalBill{
   var Consumer_no:Int=38562
    var Consumer_name:String="Ram"
